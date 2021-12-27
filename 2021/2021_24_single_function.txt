@@ -1,0 +1,28 @@
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1 <- can be 26
+add x 10 <- param a
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 1 <- param b
+mul y x
+add z y
+
+f(in, z_in) -> z
+{
+  z = z_in (or z = z_in / 26)
+  if (in == z_in % 26 + a)
+    x = 0
+  else
+    x = 1
+  return z*(25x + 1) + x*(in + b) 
+}
